@@ -20,6 +20,7 @@ The game features various different mechanics, from dragging and dropping to sti
 Where to find everything:
 
 The game is featured on [Itch][1]
+
 [1]: https://the-galactic-chefs.itch.io/cosmic-cooking-martian-madness-test "Itch"
 
 Art can also be seen here (add link to artstation)
