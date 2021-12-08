@@ -7,6 +7,8 @@ Funky code for the cutting scripts
 
 Foolish Mortals for the visual novel engine
 
+Russell Savage and Dented Pixel for LeanTween
+
 ## **About:**
 
 For our senior design project we wanted to take aspects from cooking games
