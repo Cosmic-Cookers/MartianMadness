@@ -20,7 +20,8 @@ public class nextstep : MonoBehaviour
 
     public void next()
     {
-        if (SceneManager.GetActiveScene().name == "Stir")
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        /*if (SceneManager.GetActiveScene().name == "Stir")
         {
             SceneManager.LoadScene("VN_MeetXenon");
         }
@@ -73,6 +74,22 @@ public class nextstep : MonoBehaviour
         {
             SceneManager.LoadScene("KamaryStep7Final");
         }
+        if (SceneManager.GetActiveScene().name == "RamenStep1")
+        {
+            SceneManager.LoadScene("RamenStep2");
+        }
+        if (SceneManager.GetActiveScene().name == "RamenStep2")
+        {
+            SceneManager.LoadScene("RamenStep3");
+        }
+        if (SceneManager.GetActiveScene().name == "RamenStep3")
+        {
+            SceneManager.LoadScene("RamenStep4");
+        }
+        if (SceneManager.GetActiveScene().name == "RamenStep4")
+        {
+            SceneManager.LoadScene("RamenStep5");
+        }*/
 
     }
 }

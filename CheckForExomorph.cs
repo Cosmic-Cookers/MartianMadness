@@ -5,6 +5,7 @@ using UnityEngine;
 public class CheckForExomorph : MonoBehaviour
 {
     public GameObject fireButton;
+    public GameObject Pot;
     public int allIn = 0;
     public float cooktime;
     public float cooktime2;
@@ -20,6 +21,13 @@ public class CheckForExomorph : MonoBehaviour
     public bool isCooking5 = false;
     public bool isCooking6 = false;
     public bool isCooking7 = false;
+    public bool checkfordone = false;
+    public bool checkfordone2 = false;
+    public bool checkfordone3 = false;
+    public bool checkfordone4 = false;
+    public bool checkfordone5 = false;
+    public bool checkfordone6 = false;
+    public bool checkfordone7 = false;
     public GameObject done1;
     public GameObject done2;
     public GameObject done3;
@@ -37,41 +45,48 @@ public class CheckForExomorph : MonoBehaviour
     public GameObject overdone7;
 
     
-    
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        Debug.Log("Is in the pot");
-        //allIn++;
-        //Debug.Log(allIn);
-        if(this.gameObject.name == "Exo 1")
+    //if(this.gameObject.name == "Pot"){
+        private void OnTriggerEnter2D(Collider2D other)
         {
-            isCooking = true;
+
+            if (other.gameObject.tag == "Pot") 
+            {
+            //Debug.Log("Is in the pot");
+            //allIn++;
+            //Debug.Log(allIn);
+            
+            if (this.gameObject.name == "Exo 1")
+            {
+                isCooking = true;
+            }
+            if (this.gameObject.name == "Exo 2")
+            {
+                isCooking2 = true;
+            }
+            if (this.gameObject.name == "Exo Tail")
+            {
+                isCooking3 = true;
+            }
+            if (this.gameObject.name == "Exo Leg 1")
+            {
+                isCooking4 = true;
+            }
+            if (this.gameObject.name == "Exo Leg 2")
+            {
+                isCooking5 = true;
+            }
+            if (this.gameObject.name == "Exo Arm 1")
+            {
+                isCooking6 = true;
+            }
+            if (this.gameObject.name == "Exo Arm 2")
+            {
+                isCooking7 = true;
+            }
+            }
+
         }
-        if (this.gameObject.name == "Exo 2")
-        {
-            isCooking2 = true;
-        }
-        if (this.gameObject.name == "Exo Tail")
-        {
-            isCooking3 = true;
-        }
-        if (this.gameObject.name == "Exo Leg 1")
-        {
-            isCooking4 = true;
-        }
-        if (this.gameObject.name == "Exo Leg 2")
-        {
-            isCooking5 = true;
-        }
-        if (this.gameObject.name == "Exo Arm 1")
-        {
-            isCooking6 = true;
-        }
-        if (this.gameObject.name == "Exo Arm 2")
-        {
-            isCooking7 = true;
-        }
-    }
+    //}
     
     private void OnTriggerExit2D(Collider2D other)
     {
@@ -99,6 +114,8 @@ public class CheckForExomorph : MonoBehaviour
             if (cooktime >= 7.5 && cooktime < 15)
             {
                 done1.SetActive(true);
+                checkfordone = true;
+                
             }
             if (cooktime >= 15)
             {
@@ -111,6 +128,7 @@ public class CheckForExomorph : MonoBehaviour
             if (cooktime2 >= 7.5 && cooktime2 < 15)
             {
                 done2.SetActive(true);
+                checkfordone2 = true;
             }
             if (cooktime2 >= 15)
             {
@@ -123,6 +141,7 @@ public class CheckForExomorph : MonoBehaviour
             if (cooktime3 >= 7.5 && cooktime3 < 15)
             {
                 done3.SetActive(true);
+                checkfordone3 = true;
             }
             if (cooktime3 >= 15)
             {
@@ -135,6 +154,7 @@ public class CheckForExomorph : MonoBehaviour
             if (cooktime4 >= 7.5 && cooktime4 < 15)
             {
                 done4.SetActive(true);
+                checkfordone4 = true;
             }
             if (cooktime4 >= 15)
             {
@@ -147,6 +167,7 @@ public class CheckForExomorph : MonoBehaviour
             if (cooktime5 >= 7.5 && cooktime5 < 15)
             {
                 done5.SetActive(true);
+                checkfordone5 = true;
             }
             if (cooktime5 >= 15)
             {
@@ -159,6 +180,7 @@ public class CheckForExomorph : MonoBehaviour
             if (cooktime6 >= 7.5 && cooktime6 < 15)
             {
                 done6.SetActive(true);
+                checkfordone6 = true;
             }
             if (cooktime6 >= 15)
             {
@@ -171,11 +193,17 @@ public class CheckForExomorph : MonoBehaviour
             if (cooktime7 >= 7.5 && cooktime7 < 15)
             {
                 done7.SetActive(true);
+                checkfordone7 = true;
             }
             if (cooktime7 >= 15)
             {
                 overdone7.SetActive(true);
             }
+        }
+
+        if (this.gameObject.name == "Exo 1 partway" && this.gameObject.name == "Exo 2 partway" && this.gameObject.name == "Exo Tail partway" && this.gameObject.name == "Exo Leg 1 partway" && this.gameObject.name == "Exo Leg 2 partway" && this.gameObject.name == "Exo Arm 1 partway" && this.gameObject.name == "Exo Arm 2 partway")
+        {
+            fireButton.SetActive(true);
         }
         //Debug.Log(cooktime4);
         //Debug.Log(isCooking4);
