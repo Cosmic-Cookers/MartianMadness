@@ -1,6 +1,8 @@
 # MartianMadness
 Our Senior Design Project Game: Cosmic Cooking Martian Madness
 
+![This is an Image](https://github.com/Cosmic-Cookers/MartianMadness/blob/main/Logo%20.png)
+
 ## **Credits to:**
 
 Funky code for the cutting scripts
@@ -14,6 +16,8 @@ Russell Savage and Dented Pixel for LeanTween
 For our senior design project we wanted to take aspects from cooking games
 and visual novels to create a story driven game that follows the story of Margo as she 
 begins her adventure to be the best cook in the universe.
+
+![This is an Image](https://github.com/Cosmic-Cookers/MartianMadness/blob/main/margothelmet.png)
 
 ## **How to play:**
 
@@ -36,3 +40,5 @@ Music and Sound done by Jackson Richardson
 Art done by Julia Nguyen and Joseph Shahum
 
 Coding done by Nick Smeraldo and Julia Nguyen
+
+![This is an Image](https://github.com/Cosmic-Cookers/MartianMadness/blob/main/xenon_expressionless.png)
