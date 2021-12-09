@@ -29,7 +29,9 @@ The game is featured on [Itch][1]
 
 [1]: https://the-galactic-chefs.itch.io/cosmic-cooking-martian-madness-test "Itch"
 
-Art can also be seen here (add link to artstation)
+Art can also be seen here [Artstation][2]
+
+[2]: https://www.artstation.com/artwork/RnnoqA
 
 ## **Credits:**
 
