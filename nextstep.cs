@@ -3,24 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-
+/// <summary>
+/// Initial Script written by Julia 
+/// next() changed by Nick
+/// </summary>
 public class nextstep : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public void reset()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void next()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); //go to next step in the build index. This is specifically for buttons
         /*if (SceneManager.GetActiveScene().name == "Stir")
         {
             SceneManager.LoadScene("VN_MeetXenon");

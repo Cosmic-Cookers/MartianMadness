@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
-
+/// <summary>
+/// Legacy slider controller to show progress of cooking
+/// Time increased the slider visually
+/// </summary>
 public class SliderController : MonoBehaviour
 {
     //public Text valueText

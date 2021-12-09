@@ -2,10 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// This script checks when each
+/// exomorphh has entered the oil and checks how long they cook for
+/// </summary>
 public class CheckForExomorph : MonoBehaviour
 {
     public GameObject fireButton;
     public GameObject Pot;
+    public GameObject Button2;
     public int allIn = 0;
     public float cooktime;
     public float cooktime2;
@@ -45,15 +50,16 @@ public class CheckForExomorph : MonoBehaviour
     public GameObject overdone7;
 
     
-    //if(this.gameObject.name == "Pot"){
+
+    
+    
+    //checks for entry withhin the pot's hitbox specifically to avoid 
+    //when they are layered on top of each other
         private void OnTriggerEnter2D(Collider2D other)
         {
-
             if (other.gameObject.tag == "Pot") 
             {
-            //Debug.Log("Is in the pot");
-            //allIn++;
-            //Debug.Log(allIn);
+         
             
             if (this.gameObject.name == "Exo 1")
             {
@@ -62,50 +68,69 @@ public class CheckForExomorph : MonoBehaviour
             if (this.gameObject.name == "Exo 2")
             {
                 isCooking2 = true;
+                
             }
             if (this.gameObject.name == "Exo Tail")
             {
                 isCooking3 = true;
+                
             }
             if (this.gameObject.name == "Exo Leg 1")
             {
                 isCooking4 = true;
+                
             }
             if (this.gameObject.name == "Exo Leg 2")
             {
                 isCooking5 = true;
+                
             }
             if (this.gameObject.name == "Exo Arm 1")
             {
                 isCooking6 = true;
+                
             }
             if (this.gameObject.name == "Exo Arm 2")
             {
                 isCooking7 = true;
+                
             }
             }
+         
 
         }
-    //}
-    
+
+    //Checks for when they leave the pot's hitbox
+    //so that it doesn't set numbers to 0 if 
+    //the other moveable game objects don't move out of
+    //each others hitbox
     private void OnTriggerExit2D(Collider2D other)
     {
-        cooktime = 0;
-        cooktime2 = 0;
-        cooktime3 = 0;
-        cooktime4 = 0;
-        cooktime5 = 0;
-        cooktime6 = 0;
-        cooktime7 = 0;
-        isCooking = false;
-        isCooking2 = false;
-        isCooking3 = false;
-        isCooking4 = false;
-        isCooking5 = false;
-        isCooking6 = false;
-        isCooking7 = false;
+        if (other.gameObject.tag == "Pot")
+        {
+            cooktime = 0;
+            cooktime2 = 0;
+            cooktime3 = 0;
+            cooktime4 = 0;
+            cooktime5 = 0;
+            cooktime6 = 0;
+            cooktime7 = 0;
+            isCooking = false;
+            isCooking2 = false;
+            isCooking3 = false;
+            isCooking4 = false;
+            isCooking5 = false;
+            isCooking6 = false;
+            isCooking7 = false;
+        }
     }
 
+
+    //checks for a boolean
+    //if the boolean is true then it adds time
+    //if time is within certain numbers then it sets the proper game object to be active
+    //it also sets a differant boolean true for each one to be checked by the manager
+    //sets that same boolean to false if left in area too long and activates restart button
     void Update()
     {
         if (isCooking)
@@ -120,6 +145,9 @@ public class CheckForExomorph : MonoBehaviour
             if (cooktime >= 15)
             {
                 overdone1.SetActive(true);
+                Button2.SetActive(true);
+                checkfordone = false;
+
             }
         }
         if (isCooking2)
@@ -133,6 +161,8 @@ public class CheckForExomorph : MonoBehaviour
             if (cooktime2 >= 15)
             {
                 overdone2.SetActive(true);
+                Button2.SetActive(true);
+                checkfordone2 = false;
             }
         }
         if (isCooking3)
@@ -146,6 +176,8 @@ public class CheckForExomorph : MonoBehaviour
             if (cooktime3 >= 15)
             {
                 overdone3.SetActive(true);
+                Button2.SetActive(true);
+                checkfordone3 = false;
             }
         }
         if (isCooking4)
@@ -159,6 +191,8 @@ public class CheckForExomorph : MonoBehaviour
             if (cooktime4 >= 15)
             {
                 overdone4.SetActive(true);
+                Button2.SetActive(true);
+                checkfordone4 = false;
             }
         }
         if (isCooking5)
@@ -172,6 +206,8 @@ public class CheckForExomorph : MonoBehaviour
             if (cooktime5 >= 15)
             {
                 overdone5.SetActive(true);
+                Button2.SetActive(true);
+                checkfordone5 = false;
             }
         }
         if (isCooking6)
@@ -185,6 +221,8 @@ public class CheckForExomorph : MonoBehaviour
             if (cooktime6 >= 15)
             {
                 overdone6.SetActive(true);
+                Button2.SetActive(true);
+                checkfordone6 = false;
             }
         }
         if (isCooking7)
@@ -198,6 +236,8 @@ public class CheckForExomorph : MonoBehaviour
             if (cooktime7 >= 15)
             {
                 overdone7.SetActive(true);
+                Button2.SetActive(true);
+                checkfordone7 = false;
             }
         }
 

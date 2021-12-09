@@ -4,6 +4,9 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
+/// <summary>
+/// Legacy version of the checks for the flour scene. Now use checkforflour
+/// </summary>
 public class Flour : MonoBehaviour, IDropHandler
 {
     private int amountDropped = 0;

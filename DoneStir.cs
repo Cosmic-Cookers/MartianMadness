@@ -4,6 +4,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+/// <summary>
+/// Legacy check for the stir scene for the exomorph has been changed
+/// </summary>
 public class DoneStir : MonoBehaviour
 {
 

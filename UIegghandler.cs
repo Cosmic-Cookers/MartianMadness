@@ -16,7 +16,7 @@ public class UIegghandler : MonoBehaviour
     {
         if (nextUI)
         {
-            button.SetActive(true);
+            button.SetActive(true); //sets button to true if next UI specificlaly for UI for the egg scene
         }
     }
 }

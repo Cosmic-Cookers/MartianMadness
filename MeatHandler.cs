@@ -2,17 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// This script is to count how many meats have been placed into the bowl, mixed, then placed ont he pan
+/// </summary>
 public class MeatHandler : MonoBehaviour
 {
-    public int meatcounter = 0;
-    public int meatfinalcounter = 0;
+    public int meatcounter = 0; //initial counter at mixing
+    public int meatfinalcounter = 0; //counter for when placed on pan after being mixed
 
-    public bool mixing = false;
+    public bool mixing = false; //mixing state
  
-    public bool mixed= false;
+    public bool mixed= false; //has already been mixed
 
     public GameObject Button;
 
+    /// <summary>
+    /// Section for arrows and initial meats
+    /// </summary>
     public GameObject arrow;
     public GameObject arrow1;
     public GameObject bowl;
@@ -22,30 +28,29 @@ public class MeatHandler : MonoBehaviour
     public GameObject meatcoat3;
     public GameObject meatcoat4;
 
-
+    /// <summary>
+    /// Coated meats
+    /// </summary>
     public GameObject meatcoat5;
     public GameObject meatcoat6;
     public GameObject meatcoat7;
     public GameObject meatcoat8;
 
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update() { 
-        Debug.Log(meatcounter);
-        Debug.Log(meatfinalcounter);
-        if (meatcounter == 1 &&meatfinalcounter==0)
+        //Debug.Log(meatcounter);
+        //Debug.Log(meatfinalcounter);
+
+        if (meatcounter == 1 &&meatfinalcounter==0) //if it is the first meat taken out of the pan
         {
             meatcoat1.SetActive(true);
-            arrow.SetActive(false);
-            if (mixed)
+            arrow.SetActive(false); //set the arrow as false
+            if (mixed) //if it is mixed
             {
-                arrow1.SetActive(true);
-                meatcoat1.GetComponent<Draggable>().enabled = true;
-                bowl.GetComponent<CircleCollider2D>().enabled = false;
+                arrow1.SetActive(true); //show arrow to put in the pan
+                meatcoat1.GetComponent<Draggable>().enabled = true; //allow for it to be dragged
+                bowl.GetComponent<CircleCollider2D>().enabled = false; //turn off the colliders of the bowls so it doesnt interfere
                 bowl2.GetComponent<CircleCollider2D>().enabled = false;
 
             }
@@ -53,11 +58,12 @@ public class MeatHandler : MonoBehaviour
           
 
         }
-        if (mixed)
+        if (mixed) //if its mixed
         {
-            bowl.GetComponent<CircleCollider2D>().enabled = false;
+            bowl.GetComponent<CircleCollider2D>().enabled = false; //turn off colliders
             bowl2.GetComponent<CircleCollider2D>().enabled = false;
-            if (meatcounter == 2 )
+
+            if (meatcounter == 2 ) //set each meat respectively and make them draggable when they are done being mixed.
             {
                 meatcoat2.GetComponent<Draggable>().enabled = true;
             }
@@ -73,7 +79,7 @@ public class MeatHandler : MonoBehaviour
         }
         if (mixed == false)
         {
-            bowl.GetComponent<CircleCollider2D>().enabled = true;
+            bowl.GetComponent<CircleCollider2D>().enabled = true; //reset their colliders
             bowl2.GetComponent<CircleCollider2D>().enabled = true;
         }
         if (meatcounter == 2 && meatfinalcounter == 1)
@@ -89,7 +95,7 @@ public class MeatHandler : MonoBehaviour
             meatcoat4.SetActive(true);
         }
 
-        if (meatfinalcounter == 1)
+        if (meatfinalcounter == 1) //set actives on the pan for each respective meats.
         {
             meatcoat5.SetActive(true);
             arrow1.SetActive(false);
@@ -106,7 +112,7 @@ public class MeatHandler : MonoBehaviour
         if (meatfinalcounter == 4)
         {
             meatcoat8.SetActive(true);
-            Button.SetActive(true);
+            Button.SetActive(true); //next step button is set to active
         }
 
 

@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// This Script checks which hitbox it has entered based on tag for the exomorph flour scene
+/// </summary>
 public class checkforegg : MonoBehaviour
 {
     public GameObject egg1;

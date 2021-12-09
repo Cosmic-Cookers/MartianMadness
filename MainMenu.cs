@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/// <summary>
+/// Used for the start menu. QuitGame() reused for the credits scene
+/// </summary>
 public class MainMenu : MonoBehaviour
 {
     public void PlayGame()

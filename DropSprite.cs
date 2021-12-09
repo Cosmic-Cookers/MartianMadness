@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// this script is for dropping the egg for cracking scene for the exomorph
+/// </summary>
 public class DropSprite : MonoBehaviour
 {
 
@@ -24,13 +27,13 @@ public class DropSprite : MonoBehaviour
 
 
         GameObject eggdrop = this.gameObject;
-        CheckCollision eggdropped = eggdrop.GetComponent<CheckCollision>();
+        CheckCollision eggdropped = eggdrop.GetComponent<CheckCollision>(); //find script for check collisions
 
-        if (!eggdropped.isDrop)
+        if (!eggdropped.isDrop) //if you have not dropped the egg above
         {
-            if (isDragging)
+            if (isDragging) //allow for the egg to be dragged
             {
-                Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+                Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position; //follow position
                 transform.Translate(mousePosition);
             }
         }

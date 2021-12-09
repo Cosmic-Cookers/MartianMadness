@@ -2,11 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// This script is to work with the UI to add the wok ingredients if the player clicks on the object
+/// </summary>
 public class addWok : MonoBehaviour
 {
 
-    private int clicks = 0;
+    private int clicks = 0; //clicks refers to to the player clicks on the certain object
 
+    /// <summary>
+    /// Game Objects are added within the inspector of 3 of each meat, mushroom, and onion. This also includes an arrow fo rthe initial click and the eel animation
+    /// </summary>
     public GameObject wok;
     public GameObject onion1;
     public GameObject onion2;
@@ -20,24 +26,22 @@ public class addWok : MonoBehaviour
     public GameObject arrow;
     public GameObject eelanim;
     // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+ 
     private void OnMouseDown()
     {
-        GameObject WokHandler = GameObject.Find("WokHandler");
+        GameObject WokHandler = GameObject.Find("WokHandler"); //find reference to the wokhandler which is an game object within the game
         WokHandler Wokhandle = WokHandler.GetComponent<WokHandler>();
-        if (gameObject.name == "rawonioncut")
+
+        if (gameObject.name == "rawonioncut") //refers to the name of the object when clicked upon
         {
-            if (Wokhandle.onion)
+            if (Wokhandle.onion) //Wok handler boolean which orders the steps of the ingredients
             {
-                clicks++;
-                if (clicks == 1)
+                clicks++; //once a player clicks, increase teh click count
+                if (clicks == 1) // if clicked set the respective onion active
                 {
                     onion1.SetActive(true);
 
-                    if (wok.GetComponent<AudioSource>().isPlaying == false)
+                    if (wok.GetComponent<AudioSource>().isPlaying == false) //Start playing sizzling noise that is attached to the wok object if it already not playing
                     {
                         wok.GetComponent<AudioSource>().Play();
                     }
@@ -50,14 +54,14 @@ public class addWok : MonoBehaviour
                 else if (clicks == 3)
                 {
                     onion3.SetActive(true);
-                    clicks = 0;
+                    clicks = 0; //after gettign 3 clicks reset clicks for the rest of the ingredients
                 }
             }
         }
-        else if (gameObject.name == "mushroomcut")
+        else if (gameObject.name == "mushroomcut") //refers to the name of the object when clicked upon
+        {
+                if (Wokhandle.mushroom) //Wok handler boolean which orders the steps of the ingredients
             {
-                if (Wokhandle.mushroom)
-                {
                     clicks++;
                     if (clicks == 1)
                     {
@@ -76,9 +80,9 @@ public class addWok : MonoBehaviour
                 }
             }
 
-        else if (gameObject.name == "spacemeatcut")
+        else if (gameObject.name == "spacemeatcut")//refers to the name of the object when clicked upon
         {
-            if (Wokhandle.meat)
+            if (Wokhandle.meat) //Wok handler boolean which orders the steps of the ingredients
             {
                 clicks++;
                 if (clicks == 1)
@@ -98,20 +102,15 @@ public class addWok : MonoBehaviour
             }
         }
 
-        else if (gameObject.name == "eelpic")
+        else if (gameObject.name == "eelpic") //refers to the name of the object when clicked upon
         {
-            if (Wokhandle.eel)
+            if (Wokhandle.eel) //Wok handler boolean which orders the steps of the ingredients
             {
-                eelanim.SetActive(true);
-                gameObject.GetComponent<AudioSource>().Play();  
+                eelanim.SetActive(true); //set the animation true
+                gameObject.GetComponent<AudioSource>().Play();  //play the respective audio for boiling
             }
          
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-       
-    }
 }

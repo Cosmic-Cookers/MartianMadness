@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
-
-public class Droppable : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler, IDropHandler
+/// <summary>
+/// Legacy version of the dragging of objects for spice scenes
+/// </summary>
+public class Droppable : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler//, IDropHandler
 {
     [SerializeField] private Canvas canvas;
     
@@ -48,10 +50,10 @@ public class Droppable : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, 
         //Debug.Log("OnPointerDown");
     }
 
-    public void OnDrop(PointerEventData eventData)
-    {
+    //public void OnDrop(PointerEventData eventData)
+    //{
    
-        throw new System.NotImplementedException();
-    }
+    //    throw new System.NotImplementedException();
+    //}
     
 }
